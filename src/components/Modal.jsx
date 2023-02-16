@@ -12,7 +12,7 @@ export const Modal = ({ toggleModal, largeImageURL }) => {
     return () => {
       window.removeEventListener('keydown', closeModal);
     };
-  }, [closeModal]);
+  }, []);
 
   return (
     <div onClick={toggleModal} className='overlay'>
