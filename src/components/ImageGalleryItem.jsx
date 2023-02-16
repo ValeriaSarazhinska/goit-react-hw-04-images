@@ -14,7 +14,7 @@ export const ImageGalleryItem = ({ webformatURL, largeImageURL }) => {
         <img
           className='imageGalleryItem-image'
           src={webformatURL}
-          alt=''
+          alt='tags'
         />
       </li>
       {open && (

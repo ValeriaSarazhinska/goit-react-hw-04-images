@@ -22,8 +22,8 @@ export const App = () => {
   const loadMore = () => {
     setPage(prevPage => (prevPage + 1));
   };
-
   useEffect(() => {
+    if(!name)return
     const fetchData = async()=> {
       try {
         setLoading(true);
@@ -35,7 +35,6 @@ export const App = () => {
           );
         }
         setGallery(prevGallery => ([...prevGallery, ...hits]));
-        console.log(hits);
         setTotalHits(totalHits);
       } catch (error) {
         Notify.failure('Something went wrong');

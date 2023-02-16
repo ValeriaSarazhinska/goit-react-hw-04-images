@@ -7,7 +7,13 @@ export const getPhotos = async (name, page) => {
     const responce = await axios.get(
       `${URL}${name}&page=${page}&image_type=photo&orientation=horizontal&per_page=12`
     );
-    return responce.data;
+    const {hits, totalHits } = responce.data
+    const pictures = hits.map(picture => {
+     const {id, webformatURL, largeImageURL, tags} = picture
+      return {id, webformatURL, largeImageURL, tags}
+    })
+
+    return {totalHits, hits: pictures };
   } catch (error) {
     console.log(error);
   }

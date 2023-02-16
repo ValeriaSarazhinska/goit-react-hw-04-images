@@ -17,7 +17,7 @@ export const Modal = ({ toggleModal, largeImageURL }) => {
   return (
     <div onClick={toggleModal} className='overlay'>
       <div className='modal'>
-        <img src={largeImageURL} alt='' />
+        <img src={largeImageURL} alt='tags' />
       </div>
     </div>
   );
